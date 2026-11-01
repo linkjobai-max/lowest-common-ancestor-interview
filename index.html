@@ -1,0 +1,13 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Lowest Common Ancestor: Three Versions You Should Be Able to Code</title></head><body><h1>Lowest Common Ancestor: Three Versions You Should Be Able to Code</h1>
+<p>Lowest common ancestor (LCA) questions come in a few flavors, and knowing which one you have saves a lot of time.</p>
+<h2>In a binary search tree</h2>
+<p>Walk from the root: if both nodes are smaller, go left; if both are larger, go right; otherwise the current node is the LCA. O(h) time, O(1) space.</p>
+<h2>In a general binary tree</h2>
+<p>Recurse: return the node if it matches p or q, otherwise search both sides. If both sides return non-null, the current node is the LCA; otherwise pass up whichever side is non-null. O(n) time.</p>
+<h2>With parent pointers</h2>
+<p>Treat it like finding the intersection of two linked lists: walk up from both nodes, switching to the other start when you hit the root. They meet at the LCA.</p>
+<h2>Edge cases</h2>
+<p>One node is the ancestor of the other, and one node might not exist in the tree. Ask about the second case; if it is possible, track whether each node was actually found.</p>
+<h2>Follow-up</h2>
+<p>Many LCA queries on a static tree: mention binary lifting (O(log n) per query after O(n log n) preprocessing). You rarely need to code it, but naming it shows depth. I practice these trees with <a href="https://www.linkjob.ai/coding-interview-copilot/">Linkjob AI coding helper</a>.</p>
+<p><em>Disclosure: I work on Linkjob AI.</em></p></body></html>
